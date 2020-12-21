@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using PhoneBook.DataAccess;
 
 namespace PhoneBookCoreVue
 {
@@ -26,8 +28,12 @@ namespace PhoneBookCoreVue
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
+
             services.AddSpaStaticFiles(options => options.RootPath = "app/dist");
+
+            services.AddDbContext<PhoneBookDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -11,13 +11,6 @@ namespace PhoneBook.DataAccess
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder
-                .UseLazyLoadingProxies()
-                .UseSqlServer("Server=91.201.72.213;Database=PhoneBookGuk;User=study;Password=study;MultipleActiveResultSets=true");
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Contact>(b =>
