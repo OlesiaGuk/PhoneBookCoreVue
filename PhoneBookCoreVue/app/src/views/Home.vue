@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col>
+        <ContactsTable />
+      </b-col>
+      <b-col>
+        <InputForm />
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  // @ is an alias to /src
+  import ContactsTable from '@/components/ContactsTable.vue';
+  import InputForm from '@/components/InputForm.vue';
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  export default {
+    name: 'Home',
+    components: {
+      ContactsTable,
+      InputForm
+    }
   }
-}
 </script>
